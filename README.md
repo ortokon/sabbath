@@ -6,3 +6,6 @@
  - [Учебник GIT на русском](http://githowto.com/ru)
  - [Видео-уроки по GIT и Github](https://www.youtube.com/playlist?list=PLY4rE9dstrJyTdVJpv7FibSaXB4BHPInb)
  - [Список всех документаций мира](http://devdocs.io/git)
+
+## Задания
+ - [Сделать первичную разметку для главной страницы](https://github.com/ortokon/sabbath/blob/master/homework/markup.md)
