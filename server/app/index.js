@@ -29,8 +29,9 @@ function createApp () {
  * @emits {ready}
  */
 function start (settings, data) {
+  settings = settings || {};
   app.settings = Object.assign({}, expose(config, 'port', 'host'), settings);
-  app.server = expressInstance.listen(settings.port, function(){
+  app.server = expressInstance.listen(app.settings.port, function(){
     app.emit('ready', data);
   });
 }

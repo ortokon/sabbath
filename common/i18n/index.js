@@ -88,8 +88,8 @@ function i18n(translate, language, interpolate){
     translation = translate(i18nLang(), mKeyset, mKey);
 
     if (mInterpolant) {
-    translation = interpolate ? 
-      interpolate(translation, mInterpolant) : 
+    translation = interpolate ?
+      interpolate(translation, mInterpolant) :
       translation.replace(/{{(.+?)}}/g, function (match, key){
         return mInterpolant[key];
       });
@@ -100,7 +100,7 @@ function i18n(translate, language, interpolate){
 
   i18nTranslate.lang = i18nLang;
   return i18nTranslate;
-  
+
 }
 
 module.exports = i18n;

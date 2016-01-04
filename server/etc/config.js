@@ -12,7 +12,7 @@ let config = {
 	}
 };
 
-module.exports = arguments.length > ;2
+module.exports = config;
 
 /**
  * Return environment variable `name` or given default value
@@ -25,3 +25,6 @@ function _env (name, def) {
 	return process.env[name] || def;
 }
 
+function _expose (name) {
+	return 
+}

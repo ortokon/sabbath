@@ -7,7 +7,7 @@ module.exports.forOf = forOf;
  * @public
  * @param {object} o - given object
  * @param {string} name - name of property
- * @e
+ * @return {object}
  */
 function expose (o, name) {
   return arguments.length > 2 ?
@@ -18,7 +18,10 @@ function expose (o, name) {
     (o[name] ? {[name]: o[name]} : null);
 }
 
-
+/**
+ * @param {object} o
+ * @param {function} fn
+ */
 function forOf (o, fn){
   Object.keys(o).forEach(function(key, i){
     fn(o[key], key);
