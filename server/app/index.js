@@ -17,7 +17,9 @@ function createApp () {
     shutdown: shutdown,
     restart: restart,
     server: null,
-    instance: expressInstance
+    settings: {},
+    instance: expressInstance,
+    config: configure
   });
 }
 
@@ -30,7 +32,7 @@ function createApp () {
  */
 function start (settings, data) {
   settings = settings || {};
-  app.settings = Object.assign({}, expose(config, 'port', 'host'), settings);
+  Object.assign(app.settings, expose(config, 'port', 'host', 'static'), settings);
   app.server = expressInstance.listen(app.settings.port, function(){
     app.emit('ready', data);
   });
@@ -62,4 +64,11 @@ function restart (between) {
     app = createApp();
     app.start(settings);  
   });  
+}
+
+function configure (cfg) {
+  let routes = cfg.routes || [];
+
+  app.instance.use(express.static(app.settings.static));
+  routes.forEach(router => router(app.instance));
 }

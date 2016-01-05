@@ -8,7 +8,8 @@ module.exports = {
   version: '0.0.1',
   rooty: rooty,
   server: rooty('server'),
-  static: rooty('static'),
+  static: rooty('./static'),
+  entry: 'index',
 };
 
 /**
